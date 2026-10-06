@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "Dimension": {
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "correctness": {
+      "description": "Correctness: scored 1-5 per the rubric.",
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "completeness": {
+      "description": "Completeness: scored 1-5 per the rubric.",
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "faithfulness": {
+      "description": "Faithfulness: scored 1-5 per the rubric.",
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "helpfulness": {
+      "description": "Helpfulness: scored 1-5 per the rubric.",
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "citation_grounding": {
+      "description": "Citation grounding: scored 1-5 per the rubric.",
+      "properties": {
+        "justification": {
+          "description": "One or two sentences citing specifics.",
+          "title": "Justification",
+          "type": "string"
+        },
+        "score": {
+          "description": "1 (poor) to 5 (excellent).",
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "justification",
+        "score"
+      ],
+      "title": "Dimension",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "summary": {
+      "description": "One-line overall assessment.",
+      "title": "Summary",
+      "type": "string"
+    },
+    "verdict": {
+      "description": "pass = usable as-is; borderline = usable with edits; fail = wrong or misleading.",
+      "enum": [
+        "pass",
+        "borderline",
+        "fail"
+      ],
+      "title": "Verdict",
+      "type": "string"
+    }
+  },
+  "required": [
+    "correctness",
+    "completeness",
+    "faithfulness",
+    "helpfulness",
+    "citation_grounding",
+    "summary",
+    "verdict"
+  ],
+  "title": "Verdict",
+  "type": "object",
+  "additionalProperties": false
+}

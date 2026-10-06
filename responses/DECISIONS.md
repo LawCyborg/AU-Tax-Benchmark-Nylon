@@ -1,0 +1,16 @@
+# Design decisions: How each system was run
+
+One line per decision that applies to this folder. The full justification, known cost and source for each is in the register, [`../DECISIONS.md`](../DECISIONS.md), under the same id.
+
+| # | Decision | Justification | Status |
+|---|---|---|---|
+| S1 | Question text alone, no system prompt, for every system | No system was told what the rubric rewards | Documented, except as S2 |
+| S2 | Run Nylon as its standard service, but the comparison systems as bare models | Each system is tested as a user experiences it: the comparison systems as their providers' models with search, Nylon as subscribers use it. Output format is part of what is tested, not a side effect of the setup: each provider trains its model to a default answer format, and that default is what a practitioner receives unless they write their own instructions. Formatting is central to whether research is usable: a reviewing practitioner needs the operative statutory words, workings, the leading case and a next step (R2, R6–R9), and in the authors' view generic model output does not present research the way a practitioner needs. Producing that format is part of what a specialist product does, so giving the comparison systems instructions written to match Nylon's format would test a product the authors built, not the providers' models | Documented |
+| S3 | One shared web-search and page-reading tool for the comparison systems | Differences then reflect the model, not the tools | Documented |
+| S4 | Ceiling of 20 tool calls per question for the OpenAI systems only; Gemini 3.1 Pro, Claude Fable 5.1 and Claude Opus 5.5 uncapped | 20 is the limit OpenAI's API sets on tool calls; no ceiling was set for the other comparison systems | Documented |
+| S5 | One answer per question | A practitioner asks once | Documented |
+| S6 | Systems run between 28 September and 1 October 2026, not together; Nylon completed last | Nylon's answers were delayed by problems with the Nylon API and with source capture. Re-running every system together was judged cost-prohibitive and unlikely to make a difference, because the questions fix the 2022–23 period | Documented |
+| S7 | Strip progress messages from Fable and Opus answers automatically; grade imperfect removals as they stand | Neither system should be penalised for text outside its answer; editing answers by hand would mean the authors changing them | Documented |
+| S8 | Treat Nylon as a black box; use only its answer and cited sources | Nylon's harness design is confidential | Documented |
+| S9 | Nylon's October Snapshot held fixed | Nothing in Nylon changed after the rubric was drafted, nor during the week of 28 September 2026. Nylon does not use Kimi K3 (G1) | Documented |
+| P5 | Encrypt the questions and reference answers (`questions/questions.jsonl`) and the systems' answers (`responses/`, and the candidate-answer section of `judge-inputs/`); key on request from benchmark@usenylon.com, given an agreement not to use it to compete with CPA Australia | The questions and answers are, or may contain, copyrighted CPA Program material. CPA Australia has been asked for permission to release the questions; if it is granted, the questions and answers will be decrypted | Documented |
